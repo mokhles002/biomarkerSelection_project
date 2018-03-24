@@ -1,0 +1,3 @@
+Row,AUC_train,accuracy_train,sensitivity_train,specificity_train
+Top Five,0.750289351851852,0.7,0.625,0.8125
+All,0.842303240740741,0.774999999999999,0.791666666666667,0.75
