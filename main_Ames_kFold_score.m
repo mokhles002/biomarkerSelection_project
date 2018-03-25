@@ -15,7 +15,7 @@ addpath('lib/');  % add necessary script library saved in the "lib" folder
 [score, featureIdsorted] = featureRank_kfold_allThreeMethods(peli_ames, classLabel, 10);
 save('results/kfold_score_three_rankingMethod_ames.mat','score','featureIdsorted');
 
-%% plot three scores in one figure; figure 1 of the dissertation chapter
+%% plot three scores in one figure; figure 3 of the dissertation chapter
 h3 = figure;
 set(h3, 'PaperUnits','inches','Units','inches','Position',[2 2 9 3.5], ...
             'PaperSize',[9 3.5], 'PaperPosition',[0 0 9 3.5]);
