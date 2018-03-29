@@ -12,6 +12,7 @@ addpath('lib/');  % add necessary script library saved in the "lib" folder
 % The score methods are t-stat, MRMR-TCD, and MRMR-mrmrTCQ
 % A 10-fold cross validation is used
 
+rng(600) % provide the seeds for the random number generation
 [score, featureIdsorted] = featureRank_kfold_allThreeMethods(peli_ames, classLabel, 10);
 save('results/kfold_score_three_rankingMethod_ames.mat','score','featureIdsorted');
 
@@ -32,6 +33,7 @@ drawFigures_allThreeScore (score.mrmrTCD, featureIdsorted.mrmrTCD, geneName_N, '
 annotation('textbox','position',[0.35, 0.01, 0.33, 0.05],'String','b) Scoring Criteria: MRMR-TCD',...
        'linestyle', 'none','fontname','Arial','fontsize',12, 'fontWeight','bold',...
        'margin',0,'HorizontalAlignment','center','VerticalAlignment','bottom');
+set(gca,'ylim',[-0.01, 0.6]);
 
 % MRMR-TCQ score plot
 subplot('position',[0.722 0.23 0.27 0.75])
